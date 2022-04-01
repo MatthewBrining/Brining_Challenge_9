@@ -4,7 +4,15 @@ function renderLicenseBadge(license) {}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'MIT':
+      return 'https://opensource.org/licenses/MIT';
+
+    case 'Blah':
+      return 'look junk up later';
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -26,6 +34,8 @@ function generateMarkdown(data) {
   ## Github
    - ${data.github}
 
+  ## License
+   - [${data.license}](${renderLicenseLink})
 `;
 }
 //I can expand on this later

@@ -39,11 +39,18 @@ const questions = [
         default: 'MatthewBrining',
     },
 
-];
+    {
+        type: 'list',
+        message: 'What license was used?',
+        name: 'license',
+        choices: ['MIT','Blah']
+    },
 
+];
+ inquirer.prompt(questions).then(writeToFile);
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile("./README.md",data);
+    fs.writeFile("./README.md",generateMarkdown(data));
 };
 
 // TODO: Create a function to initialize app
